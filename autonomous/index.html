@@ -1,0 +1,847 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../pheno/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>The Sojourner - CPSLab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#autonomous-ground-vehicle-for-simultaneous-localization-and-mapping-slam-with-lidar-and-intel-d435i" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="CPSLab" class="md-header__button md-logo" aria-label="CPSLab" data-md-component="logo">
+      
+  <img src="../img/csirlogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CPSLab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Sojourner
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CPSLab" class="md-nav__button md-logo" aria-label="CPSLab" data-md-component="logo">
+      
+  <img src="../img/csirlogo.png" alt="logo">
+
+    </a>
+    CPSLab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    The Sojourner
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    The Sojourner
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Note
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vehicle-chassis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicle Chassis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motor-selection-and-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motor Selection and Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steering-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steering System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drive-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drive System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-mounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Mounting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engineering Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Torque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-sense-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power and Sense Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power and Sense Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-power-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of Power Consumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasons-for-selecting-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reasons for Selecting Sensors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      Research Team
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pheno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Phenonet Testbed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Note
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vehicle-chassis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicle Chassis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motor-selection-and-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motor Selection and Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steering-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steering System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drive-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drive System
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-mounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Mounting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engineering Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Torque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-sense-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power and Sense Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power and Sense Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-power-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of Power Consumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasons-for-selecting-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reasons for Selecting Sensors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      Research Team
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="autonomous-ground-vehicle-for-simultaneous-localization-and-mapping-slam-with-lidar-and-intel-d435i"><a href="https://github.com/adoodevv/pathfinders">Autonomous Ground Vehicle for Simultaneous Localization and Mapping (SLAM) with LiDAR and Intel D435i</a></h1>
+<p><img alt="autonomous car build" src="../img/autocar.jpg" /></p>
+<h2 id="concept-note">Concept Note</h2>
+<p><strong>Relevance of Autonomous Ground Vehicles for Simultaneous Localization and Mapping (SLAM) Using RPLIDAR and Camera</strong></p>
+<p>Autonomous ground vehicles (AGVs) equipped with SLAM technology have become vital in modern applications such as ground observatories, autonomous transportation, and precision agriculture. </p>
+<p>The integration of RPLIDAR (a rotational laser scanner) and cameras enhances their ability to perceive, map, and navigate complex environments effectively. Below are the key aspects highlighting their relevance: </p>
+<ol>
+<li>
+<p>Enhanced Perception in Dynamic Environments</p>
+<p>RPLIDAR: Provides precise distance measurements in a 360-degree field of view, enabling AGVs to detect obstacles, understand terrain, and create detailed environmental maps.
+Cameras: Capture visual information for object recognition, semantic segmentation, and texture mapping, complementing the LIDAR data for richer scene understanding.</p>
+</li>
+<li>
+<p>Simultaneous Localization and Mapping (SLAM)</p>
+<p>SLAM enables AGVs to build a map of an unknown environment while simultaneously determining their location within it.
+The fusion of RPLIDAR and camera data improves SLAM accuracy:
+    RPLIDAR: Offers robust spatial mapping in low-light or featureless conditions.
+    Camera: Provides visual cues, aiding in feature extraction and alignment where LIDAR might struggle (e.g., smooth surfaces).</p>
+</li>
+<li>
+<p>Applications in Ground Observatories</p>
+<p>Environmental Monitoring: AGVs equipped with SLAM can autonomously navigate rough terrains, collecting geospatial and ecological data. Precision Mapping: Facilitates detailed mapping for ground observatories in agriculture, geology, and conservation, helping scientists study terrain and habitats more efficiently.</p>
+</li>
+<li>
+<p>Applications in Autonomous Vehicles</p>
+<p>Navigation and Path Planning: Combines the strengths of LIDAR and cameras to avoid obstacles, follow paths, and adapt to dynamic environments.
+Urban and Off-Road Scenarios: Enables safe operation in diverse conditions, from city streets to rugged outdoor terrains.</p>
+</li>
+<li>
+<p>Advantages of Multisensor Integration</p>
+<p>Redundancy and Complementarity: The combination of RPLIDAR and cameras provides robustness against sensor failures or limitations. Cost-Effective Deployment: RPLIDAR systems are relatively affordable compared to higher-end LIDAR systems, making them suitable for wide adoption in research and industry.</p>
+</li>
+<li>
+<p>Future Prospects</p>
+<p>As SLAM algorithms advance, AGVs equipped with RPLIDAR and cameras will play a pivotal role in automating ground observatories and transportation systems, enhancing efficiency, safety, and scalability.</p>
+</li>
+</ol>
+<h2 id="mobility">Mobility</h2>
+<h3 id="vehicle-chassis">Vehicle Chassis</h3>
+<p>The project is based on the LaTrax 1/18 Rally chassis (Model #75054-5), which provides a solid foundation for the autonomous vehicle. Key specifications include:</p>
+<ul>
+<li>Length: 265 mm (10.4 inches)</li>
+<li>Width (Track): 125 mm (4.92 inches) both front and rear</li>
+<li>Height: 90 mm (3.5 inches)</li>
+<li>Wheelbase: 165 mm (6.5 inches)</li>
+<li>Weight: 554 g (19.5 ounces) with battery, 430 g (15.2 ounces) without battery</li>
+<li>Chassis Material: Molded composite Nylon monocoque</li>
+</ul>
+<p>This chassis was chosen for its compact size, lightweight design, and durability.</p>
+<h3 id="motor-selection-and-implementation">Motor Selection and Implementation</h3>
+<p>The LaTrax chassis comes with a 370 brushed motor. For autonomous operation, this motor is retained and controlled using the following components:</p>
+<ul>
+<li>ESC: Comes with Latrax chassis The model’s ESC is an extemely powerful electronic device capable of delivering high current.</li>
+</ul>
+<h3 id="steering-system">Steering System</h3>
+<p>The original steering system uses a bellcrank mechanism. For autonomous control, this has been modified to use a servo motor, controlled by:</p>
+<ul>
+<li>Arduino Nano: This allows for accurate steering control managed by the Jetson Orin Nano.</li>
+</ul>
+<h3 id="drive-system">Drive System</h3>
+<ul>
+<li>Type: Shaft-driven 4WD</li>
+<li>Transmission: 14T pinion / 54T spur</li>
+<li>Gear Ratio: 2.5:1 (internal), 9.64:1 (overall, stock)</li>
+<li>Differential: Gear type</li>
+<li>Gear Pitch: 0.5 Mod</li>
+</ul>
+<p>This 4WD system provides excellent traction and stability, which is crucial for autonomous operation in various terrains.</p>
+<h2 id="component-mounting">Component Mounting</h2>
+<p>A custom base plate has been designed and fabricated to mount all the additional components required for autonomous operation. This includes:</p>
+<ul>
+<li>RPLidar</li>
+<li>Intel D435i RealSense Depth Camera</li>
+<li>Nvidia Jetson Orin Nano</li>
+<li>L298N motor driver</li>
+<li>ESC 2 Halo ring switches</li>
+</ul>
+<p>The base plate serves as a central mounting point, ensuring all components are securely attached and properly positioned. Additional custom mounts have been created for:</p>
+<ul>
+<li>Camera mount: Attaches the Intel D435i camera to the base plate.</li>
+<li>Base mount: Connects the entire setup (base plate with all components) to the LaTrax chassis.</li>
+</ul>
+<p>These custom mounts ensure proper alignment and stability of all components during operation.</p>
+<h2 id="engineering-principles">Engineering Principles</h2>
+<h3 id="speed">Speed</h3>
+<p>The stock motor and gearing provide a balance between speed and torque. The overall drive ratio of 9.64:1 allows for good low-speed control, which is essential for precise autonomous movement.</p>
+<h3 id="torque">Torque</h3>
+<p>The gearing system provides ample torque for the vehicle's size and weight. This ensures good acceleration and climbing ability, which are important for navigating various terrains autonomously.</p>
+<h3 id="power">Power</h3>
+<p>The 370 brushed motor, combined with the stock 6V from the NiMH battery, provides sufficient power for the vehicle's operations. The power delivery is managed by the ESC, allowing for fine control of the vehicle's movements.</p>
+<h2 id="power-and-sense-management">Power and Sense Management</h2>
+<p><img alt="power circuit" src="../img/circuit.png" /></p>
+<ol>
+<li>
+<p>Jetson Orin Nano (Primary Controller)</p>
+<p>Purpose: Acts as the brain of the system, handling high-level decision-making, sensor data processing, and sending commands to motor controllers. Connections:</p>
+<p>RPLidar (Serial Over USB): Collects 360-degree LiDAR data, which is used for mapping, obstacle detection, or navigation.
+Intel D435i Camera (Serial Over USB): Provides depth sensing and visual information, useful for object detection, path planning, and visual SLAM.
+Arduino Nano (Serial Over USB): Communicates with the Arduino, which manages motor control.</p>
+<p>Power Consumption: The Jetson Orin Nano consumes around 5-15W depending on processing load.</p>
+</li>
+<li>
+<p>Arduino Nano (Motor Controller)</p>
+<p>Purpose: Receives control commands from the Jetson Orin Nano and translates them into signals for the motor drivers to control the wheels and steering. Connections:</p>
+<p>Communicates with the motor driver via PWM signals, allowing precise control over speed and direction.</p>
+<p>Power Consumption: Typically consumes 0.25W.</p>
+</li>
+<li>
+<p>RPLidar</p>
+<p>Purpose: Provides distance measurements and 2D mapping around the robot for obstacle avoidance.</p>
+<p>Power Consumption: Around 3-5W.</p>
+</li>
+<li>
+<p>Intel D435i Depth Camera</p>
+<p>Purpose: Offers depth perception to the robot, crucial for tasks like object recognition, depth mapping, and navigation.</p>
+<p>Power Consumption: Around 1.5W.</p>
+</li>
+<li>
+<p>Electronic Speed Controller</p>
+<p>Purpose: Drives the DC motor responsible for the vehicle's motion. The motor driver allows control of both speed and direction of the motor via PWM inputs. Connections:</p>
+<p>Receives PWM signals from the Arduino Nano to control the speed and direction of the 6V brushed motor.</p>
+<p>Power Consumption: Minimal, but drives the 6V motor which may consume between 2-4W depending on load.</p>
+</li>
+<li>
+<p>6V DC Brushed Motor</p>
+<p>Purpose: Powers the wheels, providing the propulsion needed to move the vehicle.
+Power Consumption: Between 2-4W depending on speed and load.</p>
+</li>
+<li>
+<p>Servo Motor</p>
+<p>Purpose: Provides steering control for the vehicle (likely Ackermann steering), adjusting the angle of the front wheels.
+Power Consumption: Around 0.5-1.5W, varying based on the load and steering angle.</p>
+</li>
+<li>
+<p>Batteries</p>
+<p>Purpose: The main power source for the system, 11.1V LiPo, supplies voltage to the Jetson whereas the the 6V NiMH powers the driving motor.
+Power Output: 11.1V with a capacity of 2200mAh, providing enough energy to sustain the robot's operations for a moderate duration.</p>
+</li>
+<li>
+<p>Switches</p>
+<p>Unordered List ItemPower Switch: Controls the overall power to the system, turning the vehicle on or off.
+Program Start Switch: Allows the user to initiate the program on the Jetson Orin Nano, triggering autonomous behavior.</p>
+</li>
+</ol>
+<h3 id="summary-of-power-consumption">Summary of Power Consumption</h3>
+<ul>
+<li>Jetson Orin Nano: 5-15W</li>
+<li>RPLidar: 3-5W</li>
+<li>Intel D435i Camera: 1.5W</li>
+<li>Arduino Nano: 0.25W</li>
+<li>6V Brushed Motor: 2-4W</li>
+<li>Servo Motor: 0.5-1.5W</li>
+</ul>
+<h3 id="reasons-for-selecting-sensors">Reasons for Selecting Sensors</h3>
+<p>RPLidar: Provides precise distance measurements and 360-degree scans, making it ideal for SLAM (Simultaneous Localization and Mapping) or obstacle avoidance in dynamic environments.</p>
+<p>Intel D435i Depth Camera: Adds 3D vision, essential for depth-based navigation and recognizing objects.</p>
+<h2 id="research-team">Research Team</h2>
+<p><img alt="Jonathan Adoo" src="../img/adoo.jpg" />
+<img alt="Haqq M" src="../img/haqq.jpg" />
+<img alt="Dr. Oteng" src="../img/otg.png" />
+<img alt="Dr. Ing M. Wilson" src="../img/mw.png" />
+<img alt="Awotwi John Paapa" src="../img/ajp.jpg" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
