@@ -6,6 +6,8 @@ theme:
 
 nav:
   - Home: index.md
+  - The Sojourner: autonomous.md
+  - The Phenonet Testbed: pheno.md
 
 markdown_extensions:
   - attr_list
