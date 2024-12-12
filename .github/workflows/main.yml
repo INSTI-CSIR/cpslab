@@ -1,0 +1,11 @@
+  - name: MkDocs Build
+
+    uses: romw314/mkdocs-action@v9
+      with:
+        # The path to the MkDocs configuration file
+        config-file: # optional, default is mkdocs.yml
+        # The directory to output the HTML site to, relative to workdir (see below)
+        output-dir: # optional, default is _site
+        # The root directory of your project (which contains the `docs` dir)
+        workdir: # optional, default is .
+          
