@@ -1,11 +1,34 @@
-  - name: MkDocs Build
+name: Deploy MkDocs to Build Branch
 
-    uses: romw314/mkdocs-action@v9
-      with:
-        # The path to the MkDocs configuration file
-        config-file: # optional, default is mkdocs.yml
-        # The directory to output the HTML site to, relative to workdir (see below)
-        output-dir: # optional, default is _site
-        # The root directory of your project (which contains the `docs` dir)
-        workdir: # optional, default is .
-          
+on:
+  push:
+    branches:
+      - main  # Replace 'main' with your primary branch name.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build MkDocs site
+        run: mkdocs build --site-dir site
+
+      - name: Deploy to Build Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: build  # Replace 'build' with the branch Coolify watches.
