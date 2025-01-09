@@ -1,2 +1,2 @@
 mkdocs
-mkdocs-material  # If you're using the Material theme
+#mkdocs-material  # If you're using the Material theme
